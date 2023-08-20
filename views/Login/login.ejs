@@ -1,0 +1,40 @@
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/css/fontawesome/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/css/template/adminlte.min.css">
+
+<center>
+<div style="margin: 20px; width: 200px; ">
+<h1 style="text-align: center;">Login</h1>
+<div>
+    <% if (typeof msg != "undefined") { %>
+        <span><%= msg %></span>
+    <% } %>
+</div>
+<div>
+    <form method="POST" action="/login/login">
+        <div class="form-group">
+            <label for="usuarioEmail">Email:</label>
+            <input type="email" class="form-control" name="usuarioEmail" id="usuarioEmail">
+        </div>
+        <div class="form-group">
+            <label for="usuarioSenha">Senha:</label>
+            <input type="password" class="form-control" name="usuarioSenha" id="usuarioSenha">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" name="usuarioAtivo" id="usuarioAtivo">
+            <label class="form-check-label" for="usuarioAtivo">Lembrar-me</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+        <a href="/" class="btn btn-primary">Voltar</a>
+    </form>
+</div>
+<script src="/js/jquery/jquery.min.js"></script>
+<script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="/js/template/adminlte.min.js"></script>
+</div>
+</center>

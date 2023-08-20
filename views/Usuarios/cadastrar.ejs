@@ -1,0 +1,38 @@
+
+<h1>Cadastrar novo usuário</h1>
+<div>
+    <% if (typeof msg != "undefined") { %>
+        <span><%= msg %></span>
+    <% } %>
+</div>
+<div>
+    <form method="POST" action="/usuarios/cadastrar">
+        <div class="form-group">
+            <label for="usuarioEmail">Email:</label>
+            <input type="email" class="form-control" name="usuarioEmail" id="usuarioEmail">
+        </div>
+        <div class="form-group">
+            <label for="usuarioSenha">Senha:</label>
+            <input type="password" class="form-control" name="usuarioSenha" id="usuarioSenha">
+        </div>
+        <div class="form-group">
+            <label for="usuarioNome">Nome:</label>
+            <input type="text" class="form-control" name="usuarioNome" id="usuarioNome">
+        </div>
+        <div class="form-group">
+            <label for="usuarioPerfil">Perfil:</label>
+            <select class="form-control" name="usuarioPerfil" id="usuarioPerfil">
+                <option value="0">-- Selecione --</option>
+                <option value="1">Administrador</option>
+                <option value="2">Recepcionista</option>
+            </select>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" name="usuarioAtivo" id="usuarioAtivo">
+            <label class="form-check-label" for="usuarioAtivo">Ativo</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Gravar</button>
+        <a href="/usuarios" class="btn btn-primary">Voltar</a>
+    </form>
+</div>
