@@ -1,22 +1,23 @@
+
+
 class LoginController {
 
-
-    loginView(req, res) {
-        res.render('login/login', {layout: 'login/login'}); // SEM EJS LAYOUT SOBRESCEVENDO O VALOR DO LAYOUT
+    indexView(req, res){
+        res.render('login/index', {layout: 'login/index'})
     }
-    login(req, res){
-        console.log(req.body)
-        let msg = "";
-        
-        if(req.body.usuarioEmail == "mateus@infomaster.inf.br" && req.body.usuarioSenha == "123") {
-            msg = "Usuario logado com sucesso!"
-            res.redirect('/');
+
+    autenticar(req, res){
+        if(req.body.email != undefined && req.body.senha != undefined){
+            if(req.body.email == "fulvio@unoeste.br" && req.body.senha == "12345"){
+                res.send({status: true, msg: "Autenticação realizada com sucesso"})
+            }
+            else{
+                res.send({status: false, msg: "Credenciais inválidas"})
+            }
         }
         else{
-            msg = "Login ou senha incorretos"
+            res.send({status: false, msg: "Credenciais inválidas"})
         }
-
-        res.render("login/login", {msg: msg, layout: 'login/login'});
     }
 
 }
